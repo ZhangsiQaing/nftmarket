@@ -1,0 +1,143 @@
+{
+  "address": "0xb6fEcF6089e3529F2329535CFC86275eF61B4F8C",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "getChainlinkDataFeedLatestAnswer",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "payToken",
+          "type": "address"
+        }
+      ],
+      "name": "getOrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "amount",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "priceFeeds",
+      "outputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_priceFeed",
+          "type": "address"
+        }
+      ],
+      "name": "setPriceFeed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x4fa062b1e4104a715c4ad249e30aed0f04a3e01dd0d728374c993ec0f09545a4",
+  "receipt": {
+    "to": null,
+    "from": "0x83F9107622bc625a5D945c55ff030B4FcC41566d",
+    "contractAddress": "0xb6fEcF6089e3529F2329535CFC86275eF61B4F8C",
+    "transactionIndex": 39,
+    "gasUsed": "431766",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x0e4ec976e1b3359553590a9d8e9fd5d1a6b4dfa434a035f5dbb8f2ffda9d191c",
+    "transactionHash": "0x4fa062b1e4104a715c4ad249e30aed0f04a3e01dd0d728374c993ec0f09545a4",
+    "logs": [],
+    "blockNumber": 9246867,
+    "cumulativeGasUsed": "28660363",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 2,
+  "solcInputHash": "a0d01a74b519223b18bf22fa7294b230",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"}],\"name\":\"getChainlinkDataFeedLatestAnswer\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"payToken\",\"type\":\"address\"}],\"name\":\"getOrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"amount\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"priceFeeds\",\"outputs\":[{\"internalType\":\"contract AggregatorV3Interface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_priceFeed\",\"type\":\"address\"}],\"name\":\"setPriceFeed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/PriceOracle.sol\":\"PriceOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\n// solhint-disable-next-line interface-starts-with-i\\ninterface AggregatorV3Interface {\\n  function decimals() external view returns (uint8);\\n\\n  function description() external view returns (string memory);\\n\\n  function version() external view returns (uint256);\\n\\n  function getRoundData(\\n    uint80 _roundId\\n  ) external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\\n\\n  function latestRoundData()\\n    external\\n    view\\n    returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);\\n}\\n\",\"keccak256\":\"0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0\",\"license\":\"MIT\"},\"contracts/PriceOracle.sol\":{\"content\":\"// SPDX-License-Identifier: SEE LICENSE IN LICENSE\\npragma solidity ^0.8;\\n\\nimport \\\"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol\\\";\\n\\ncontract PriceOracle {\\n    // \\u4ef7\\u683c\\u9884\\u8a00\\u673a\\u6620\\u5c04\\n    mapping(address => AggregatorV3Interface) public priceFeeds;\\n    \\n    // \\u8bbe\\u7f6e\\u4ef7\\u683c\\u9884\\u8a00\\u673a\\n    function setPriceFeed(\\n        address tokenAddress,\\n        address _priceFeed\\n    ) public {\\n        priceFeeds[tokenAddress] = AggregatorV3Interface(_priceFeed);\\n    }\\n\\n    // \\u83b7\\u53d6\\u4ef7\\u683c\\u6570\\u636e\\uff08\\u901a\\u8fc7\\u6620\\u5c04\\uff09\\n    function getChainlinkDataFeedLatestAnswer(address tokenAddress) public view returns (int256) {\\n        AggregatorV3Interface priceFeed = priceFeeds[tokenAddress];\\n        require(address(priceFeed) != address(0), \\\"Price feed not set\\\");\\n        // prettier-ignore\\n        (\\n            /* uint80 roundId */,\\n            int256 answer,\\n            /*uint256 startedAt*/,\\n            /*uint256 updatedAt*/,\\n            /*uint80 answeredInRound*/\\n        ) = priceFeed.latestRoundData();\\n        return answer;\\n    }\\n\\n    // \\u76f4\\u63a5\\u83b7\\u53d6\\u4ef7\\u683c\\uff08\\u539f\\u6709\\u529f\\u80fd\\uff09\\n    function getOrice(address payToken) public view returns (int256 amount) {\\n        AggregatorV3Interface priceFeed = AggregatorV3Interface(payToken);\\n\\n         // prettier-ignore\\n        (\\n            /* uint80 roundId */,\\n            int256 answer,\\n            /*uint256 startedAt*/,\\n            /*uint256 updatedAt*/,\\n            /*uint80 answeredInRound*/\\n        ) = priceFeed.latestRoundData();\\n        return answer;\\n    }\\n}\\n\\n\\n\",\"keccak256\":\"0x9d36d5fcdb96cc47e28a861e754c0570687f51d1919a63e5aaedcd901ec46956\",\"license\":\"SEE LICENSE IN LICENSE\"}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b506106dc8061001f6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806376e11286146100515780637d5ba1911461006d5780639dcb511a1461009d578063e7078f92146100cd575b600080fd5b61006b600480360381019061006691906103ef565b6100fd565b005b6100876004803603810190610082919061042f565b61017e565b6040516100949190610475565b60405180910390f35b6100b760048036038101906100b2919061042f565b610205565b6040516100c491906104ef565b60405180910390f35b6100e760048036038101906100e2919061042f565b610238565b6040516100f49190610475565b60405180910390f35b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b60008082905060008173ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa1580156101d1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101f591906105ae565b5050509150508092505050919050565b60006020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff160361030b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161030290610686565b60405180910390fd5b60008173ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015610358573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061037c91906105ae565b5050509150508092505050919050565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006103bc82610391565b9050919050565b6103cc816103b1565b81146103d757600080fd5b50565b6000813590506103e9816103c3565b92915050565b600080604083850312156104065761040561038c565b5b6000610414858286016103da565b9250506020610425858286016103da565b9150509250929050565b6000602082840312156104455761044461038c565b5b6000610453848285016103da565b91505092915050565b6000819050919050565b61046f8161045c565b82525050565b600060208201905061048a6000830184610466565b92915050565b6000819050919050565b60006104b56104b06104ab84610391565b610490565b610391565b9050919050565b60006104c78261049a565b9050919050565b60006104d9826104bc565b9050919050565b6104e9816104ce565b82525050565b600060208201905061050460008301846104e0565b92915050565b600069ffffffffffffffffffff82169050919050565b6105298161050a565b811461053457600080fd5b50565b60008151905061054681610520565b92915050565b6105558161045c565b811461056057600080fd5b50565b6000815190506105728161054c565b92915050565b6000819050919050565b61058b81610578565b811461059657600080fd5b50565b6000815190506105a881610582565b92915050565b600080600080600060a086880312156105ca576105c961038c565b5b60006105d888828901610537565b95505060206105e988828901610563565b94505060406105fa88828901610599565b935050606061060b88828901610599565b925050608061061c88828901610537565b9150509295509295909350565b600082825260208201905092915050565b7f50726963652066656564206e6f74207365740000000000000000000000000000600082015250565b6000610670601283610629565b915061067b8261063a565b602082019050919050565b6000602082019050818103600083015261069f81610663565b905091905056fea26469706673582212202fb46cf6a6b50717635e3c693ef8c051f975532326fc07a6504bcbd9c4e3fa1064736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806376e11286146100515780637d5ba1911461006d5780639dcb511a1461009d578063e7078f92146100cd575b600080fd5b61006b600480360381019061006691906103ef565b6100fd565b005b6100876004803603810190610082919061042f565b61017e565b6040516100949190610475565b60405180910390f35b6100b760048036038101906100b2919061042f565b610205565b6040516100c491906104ef565b60405180910390f35b6100e760048036038101906100e2919061042f565b610238565b6040516100f49190610475565b60405180910390f35b806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505050565b60008082905060008173ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa1580156101d1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101f591906105ae565b5050509150508092505050919050565b60006020528060005260406000206000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff160361030b576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161030290610686565b60405180910390fd5b60008173ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015610358573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061037c91906105ae565b5050509150508092505050919050565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006103bc82610391565b9050919050565b6103cc816103b1565b81146103d757600080fd5b50565b6000813590506103e9816103c3565b92915050565b600080604083850312156104065761040561038c565b5b6000610414858286016103da565b9250506020610425858286016103da565b9150509250929050565b6000602082840312156104455761044461038c565b5b6000610453848285016103da565b91505092915050565b6000819050919050565b61046f8161045c565b82525050565b600060208201905061048a6000830184610466565b92915050565b6000819050919050565b60006104b56104b06104ab84610391565b610490565b610391565b9050919050565b60006104c78261049a565b9050919050565b60006104d9826104bc565b9050919050565b6104e9816104ce565b82525050565b600060208201905061050460008301846104e0565b92915050565b600069ffffffffffffffffffff82169050919050565b6105298161050a565b811461053457600080fd5b50565b60008151905061054681610520565b92915050565b6105558161045c565b811461056057600080fd5b50565b6000815190506105728161054c565b92915050565b6000819050919050565b61058b81610578565b811461059657600080fd5b50565b6000815190506105a881610582565b92915050565b600080600080600060a086880312156105ca576105c961038c565b5b60006105d888828901610537565b95505060206105e988828901610563565b94505060406105fa88828901610599565b935050606061060b88828901610599565b925050608061061c88828901610537565b9150509295509295909350565b600082825260208201905092915050565b7f50726963652066656564206e6f74207365740000000000000000000000000000600082015250565b6000610670601283610629565b915061067b8261063a565b602082019050919050565b6000602082019050818103600083015261069f81610663565b905091905056fea26469706673582212202fb46cf6a6b50717635e3c693ef8c051f975532326fc07a6504bcbd9c4e3fa1064736f6c634300081c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 53,
+        "contract": "contracts/PriceOracle.sol:PriceOracle",
+        "label": "priceFeeds",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_contract(AggregatorV3Interface)45)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(AggregatorV3Interface)45": {
+        "encoding": "inplace",
+        "label": "contract AggregatorV3Interface",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_contract(AggregatorV3Interface)45)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => contract AggregatorV3Interface)",
+        "numberOfBytes": "32",
+        "value": "t_contract(AggregatorV3Interface)45"
+      }
+    }
+  }
+}

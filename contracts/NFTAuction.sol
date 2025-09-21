@@ -59,6 +59,7 @@ contract NftAuction is Initializable,OwnableUpgradeable,ReentrancyGuardUpgradeab
         __UUPSUpgradeable_init();
     }
 
+    // mapping(address => AggregatorV3Interface) public priceFeeds;
     mapping(address => AggregatorV3Interface) public priceFeeds;
 
     // 买家参与竞拍
@@ -151,7 +152,7 @@ contract NftAuction is Initializable,OwnableUpgradeable,ReentrancyGuardUpgradeab
     // 根据tokenId 获取价格
     function getChainlinkDataFeedLatestAnswer(address tokenAddress) public view returns (int256) {
         AggregatorV3Interface priceFeed = priceFeeds[tokenAddress];
-        require(address(priceFeed) != address(0), "Price feed not set");
+        // require(address(priceFeed) != address(0), "Price feed not set");
         // prettier-ignore
         (
             /* uint80 roundId */,
